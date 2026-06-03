@@ -94,7 +94,7 @@ sumar_matrices:
             mov [edx + 4*ebx], eax
             
             inc ebx
-            cmp ebx, 3
+            cmp ebx, [ebp+20]; tam matriz
             jl .for2
         
         inc esi
