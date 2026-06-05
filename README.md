@@ -9,6 +9,6 @@ Abre tu terminal en el directorio del proyecto y ejecuta los siguientes comandos
 
 Bash
 
-nasm -f elf32 sumar_matriz.asm -o sumar_matriz.o
-gcc -m32 sumar.c sumar_matriz.o -o mi_programa
+nasm -f elf32 sumar_matriz.asm -o sumar_matriz.o;
+gcc -m32 sumar.c sumar_matriz.o -o mi_programa;
 ./mi_programa
