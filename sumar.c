@@ -33,10 +33,10 @@ int main() {
 
     int total_elementos = n * n;
 
-    // 2. Reservar memoria
-    int* A = (int*)malloc(total_elementos * sizeof(int));
-    int* B = (int*)malloc(total_elementos * sizeof(int));
-    int* C = (int*)malloc(total_elementos * sizeof(int));
+    // 2. Reservar memoria para los arreglos
+    int A[total_elementos];
+    int B[total_elementos];
+    int C[total_elementos];
 
     // 3. Llenar con números aleatorios
     for(int i = 0; i < total_elementos; i++) {
@@ -57,11 +57,6 @@ int main() {
     printf("=== DESPUÉS DE LA SUMA ===\n");
     imprimir_matriz("Resultante C (A + B)", C, n);
     printf("Sumatoria total de todos los elementos de C: %d\n\n", suma_total);
-
-    // 6. Limpieza
-    free(A);
-    free(B);
-    free(C);
 
     return 0;
 }
