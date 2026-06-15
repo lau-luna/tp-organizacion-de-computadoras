@@ -6,12 +6,12 @@ extern void sumar_matrices(int* A, int* B, int* C, int n);
 extern int sumatoria_matriz(int* C, int n);
 
 // Función imprimir matrices
-void imprimir_matriz(const char* nombre, int* matriz, int n) {
+void imprimir_matriz(const char* nombre, int n, int matriz[n][n]) {
     printf("--- Matriz %s ---\n", nombre);
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             // Usamos %4d para que quede alineado.
-            printf("%4d ", matriz[i * n + j]); 
+            printf("%4d ", matriz[i][j]); 
         }
         printf("\n");
     }
@@ -31,32 +31,33 @@ int main() {
         return 1;
     }
 
-    int total_elementos = n * n;
-
-    // 2. Reservar memoria para los arreglos
-    int A[total_elementos];
-    int B[total_elementos];
-    int C[total_elementos];
+    // 2. Reservar memoria
+    int A[n][n];
+    int B[n][n];
+    int C[n][n];
 
     // 3. Llenar con números aleatorios
-    for(int i = 0; i < total_elementos; i++) {
-        A[i] = rand() % 1000; // rand() genera un número de 0 a 999
-        B[i] = rand() % 1000; 
-        C[i] = 0;
+    for(int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++){    
+            A[i][j] = rand() % 1000; // rand() genera un número de 0 a 999
+            B[i][j] = rand() % 1000; 
+            C[i][j] = 0;
+        }
     }
 
     printf("\n=== ANTES DE LA SUMA ===\n");
-    imprimir_matriz("A", A, n);
-    imprimir_matriz("B", B, n);
+    imprimir_matriz("A", n, A);
+    imprimir_matriz("B", n, B);
 
     // 4. Llamar a las subrutinas
-    sumar_matrices(A, B, C, n);
-    int suma_total = sumatoria_matriz(C, n);
+    sumar_matrices((int*)A, (int*)B, (int*)C, n);
+    int suma_total = sumatoria_matriz((int*)C, n);
 
     // 5. Mostrar el resultado
     printf("=== DESPUÉS DE LA SUMA ===\n");
-    imprimir_matriz("Resultante C (A + B)", C, n);
+    imprimir_matriz("Resultante C (A + B)", n, C);
     printf("Sumatoria total de todos los elementos de C: %d\n\n", suma_total);
+
 
     return 0;
 }
