@@ -1,0 +1,23 @@
+======== EXPECTED:
+; Test 1: -128 * 127 = -16256
+; Test 2: -1 * 1 = -1
+; Test 3: 1 * 1 = 1
+; Test 4: 0 * 0 = 0
+; Test 5: 86 * 86 = 7396
+; Test 6: -86 * 86 = -7396
+; Test 7: 100 * 100 = 10000
+; Test 8: 127 * 127 = 16129
+
+
+======= TESTS RESULTS:
+
+EXECUTING...
+Output:  -16256
+Output:  -1
+Output:  1
+Output:  0
+Output:  7396
+Output:  -7396
+Output:  10000
+Output:  16129
+EXECUTION HALTED NORMALLY due to the setting of the bit(s): [halt]

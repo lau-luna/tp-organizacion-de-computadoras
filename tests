@@ -1,0 +1,48 @@
+; Test 1: -128 * 127 = -16256
+MoveInm B -128
+MoveInm A 127
+MultBA
+Out A
+
+; Test 2: -1 * 1 = -1
+MoveInm B -1
+MoveInm A 1
+MultBA
+Out A
+
+; Test 3: 1 * 1 = 1
+MoveInm B 1
+MoveInm A 1
+MultBA
+Out A
+
+; Test 4: 0 * 0 = 0
+MoveInm B 0
+MoveInm A 0
+MultBA
+Out A
+
+; Test 5: 86 * 86 = 7396
+MoveInm B 86
+MoveInm A 86
+MultBA
+Out A
+
+
+; Test 6: -86 * 86 = -7396
+MoveInm B -86
+MoveInm A 86
+MultBA
+Out A
+
+; Test 7: 100 * 100 = 10000
+MoveInm B 100
+MoveInm A 100
+MultBA
+Out A
+
+; Test 8: 127 * 127 = 16129
+MoveInm B 127
+MoveInm A 127
+MultBA
+Out A
